@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Libre+Franklin:wght@300;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue:hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --drk-blue: hsl(209, 33%, 12%);
+  --title-fs: 1.5rem;
+  --title-fw: lighter;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body {
+  text-align: center;
+}
+body .comming-soon {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 25rem;
+}
+body .comming-soon .logo {
+  margin: 2rem 0;
+  width: 4rem;
+}
+body .comming-soon .title {
+  font-size: var(--title-fs);
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+body .comming-soon .title span {
+  color: var(--drk-blue);
+  font-weight: 700;
+}
+body .comming-soon .promo {
+  color: var(--gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+body .comming-soon .form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .comming-soon .form-control .input-control {
+  max-width: 20rem;
+  width: 100%;
+  padding-bottom: 2.5rem;
+}
+body .comming-soon .form-control .input-control .email-input {
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  max-width: 20rem;
+  width: 88%;
+  border-radius: 2rem;
+  font-weight: inherit;
+  margin-bottom: 0.3rem;
+}
+body .comming-soon .form-control .input-control .email-input:focus {
+  outline: none;
+  border: 1px solid var(--blue);
+}
+body .comming-soon .form-control .input-control small {
+  color: var(--light-red);
+  display: none;
+}
+body .comming-soon .form-control .active .email-input {
+  border: 1px solid var(--light-red);
+}
+body .comming-soon .form-control .active small {
+  display: block;
+}
+body .comming-soon .form-control .btn {
+  max-width: 20rem;
+  width: 100%;
+  background-color: var(--blue);
+  border-radius: 2rem;
+  border: none;
+  padding: 1rem;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0rem 0.3rem 0.5rem var(--pale-blue);
+  margin-bottom: 0.3rem;
+}
+body .comming-soon .hero-img {
+  margin: 4rem auto;
+  width: 95%;
+}
+body .comming-soon .footer-container {
+  margin: 0 auto;
+}
+body .comming-soon .footer-container .fab {
+  color: var(--blue);
+  width: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--pale-blue);
+  border-radius: 50%;
+  margin: 1rem;
+}
+body .comming-soon .copy-right {
+  color: var(--gray);
+  font-size: 1rem;
+  font-weight: 300;
+}
+body .comming-soon .modal {
+  display: none;
+  padding: 1rem;
+}
+body .comming-soon .modal .bg-layer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--pale-blue);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+body .comming-soon .modal .card {
+  background-color: white;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 2;
+  padding: 1rem;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 20rem;
+  height: 10rem;
+}
+
+@media screen and (min-width: 900px) {
+  body .comming-soon {
+    max-width: 1000px;
+  }
+  body .comming-soon .logo {
+    width: 5rem;
+    margin: 1rem;
+  }
+  body .comming-soon .title {
+    font-size: 2rem;
+  }
+  body .comming-soon .form-control {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  body .comming-soon .form-control .email-input {
+    height: 100%;
+  }
+  body .comming-soon .form-control .btn {
+    width: 10rem;
+    align-self: flex-start;
+    margin-left: 1rem;
+  }
+  body .comming-soon .hero-img {
+    width: 50%;
+    margin: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

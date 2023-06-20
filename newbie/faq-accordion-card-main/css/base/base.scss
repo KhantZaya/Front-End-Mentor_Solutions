@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --drk-blue-text: hsl(238, 29%, 16%);
+    --soft-red-text: hsl(14, 88%, 65%);
+
+    --violet-bg: hsl(273, 75%, 66%);
+    --blue-bg: hsl(240, 73%, 65%);
+
+    --drk-gray-text: hsl(237, 12%, 33%);
+    --soft-gray-text: hsl(240, 6%, 50%);
+
+    --white: hsl(240, 5%, 91%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image:linear-gradient(
+        to bottom,
+        var(--violet-bg),var(--blue-bg)
+    );
+}

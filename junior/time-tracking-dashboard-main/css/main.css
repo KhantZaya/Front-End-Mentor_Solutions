@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --orange: hsl(15, 100%, 70%);
+  --soft-blue: hsl(195, 74%, 62%);
+  --light-red: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+  --bg-drk: hsl(226, 43%, 10%);
+  --bg-light: hsl(0, 0%, 100%);
+  --card-bg-drk: hsl(235, 46%, 20%);
+  --card-bg-light: hsl(240, 100%, 96%);
+  --text-1-drk: white;
+  --text-1-light: black;
+  --text-2-drk: hsl(235, 45%, 61%);
+  --text-2-light: rgb(77, 77, 77);
+  --text-3-drk: hsl(236, 100%, 87%);
+  --text-3-light: rgb(145, 145, 145);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --text-1: var(--text-1-drk);
+    --text-2: var(--text-2-drk);
+    --text-3: var(--text-3-drk);
+    --main-bg: var(--bg-drk);
+    --card-bg: var(--card-bg-drk);
+  }
+}
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+    --text-2: var(--text-3-light);
+    --main-bg: var(--card-bg-light);
+    --card-bg: var(--bg-light);
+  }
+}
+[color-scheme=light] {
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --text-2: var(--text-3-light);
+  --main-bg: var(--card-bg-light);
+  --card-bg: var(--bg-light);
+}
+
+[color-scheme=dark] {
+  --text-1: var(--text-1-drk);
+  --text-2: var(--text-2-drk);
+  --text-3: var(--text-3-drk);
+  --main-bg: var(--bg-drk);
+  --card-bg: var(--card-bg-drk);
+}
+
+* {
+  font-family: "Rubik", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--main-bg);
+}
+body .time-tracking-section {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+body .time-tracking-section .theme-switch-container {
+  position: absolute;
+  top: 2%;
+  right: 15%;
+  display: flex;
+  align-items: center;
+}
+body .time-tracking-section .theme-switch-container .drk-mode {
+  margin-left: 0.3rem;
+  color: var(--text-2);
+}
+body .time-tracking-section .theme-switch-container .toggle {
+  border-radius: 1rem;
+  background-color: var(--card-bg);
+  width: 2.3rem;
+  height: 1.3rem;
+  position: relative;
+  border: 3px solid var(--blue);
+}
+body .time-tracking-section .theme-switch-container .toggle .slider {
+  position: absolute;
+  z-index: 1;
+  margin: 0.1rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--soft-blue);
+  transition: 0.4s;
+}
+body .time-tracking-section .theme-switch-container .toggle input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+}
+body .time-tracking-section .theme-switch-container .toggle input:checked + .slider {
+  transform: translateX(0.9rem);
+}
+body .time-tracking-section .main {
+  margin-top: 4.5rem;
+  width: 85%;
+}
+body .time-tracking-section .main .profile-time-container {
+  height: 100%;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+body .time-tracking-section .main .profile-time-container .profile-container {
+  background-color: var(--blue);
+  height: 70%;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+}
+body .time-tracking-section .main .profile-time-container .profile-container .pp-img {
+  width: 4rem;
+  border: 3px solid var(--text-1);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+body .time-tracking-section .main .profile-time-container .profile-container .profile-info .info {
+  color: var(--text-3);
+}
+body .time-tracking-section .main .profile-time-container .profile-container .profile-info .name {
+  color: var(--text-1);
+  font-weight: 300;
+}
+body .time-tracking-section .main .profile-time-container .time-container {
+  padding: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+body .time-tracking-section .main .profile-time-container .time-container .times {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.3rem 1rem;
+  color: var(--text-2);
+  font-size: 15px;
+}
+body .time-tracking-section .main .profile-time-container .time-container .times .active {
+  color: var(--text-1);
+}
+body .time-tracking-section .main .time-tracking-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+body .time-tracking-section .main .time-tracking-container .card {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+body .time-tracking-section .main .time-tracking-container .card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--orange);
+}
+body .time-tracking-section .main .time-tracking-container .card .icon {
+  width: 4rem;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content {
+  margin-top: 2.5rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content .header-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content .header-container .category {
+  color: var(--text-1);
+  font-weight: 500;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content .header-container .menu-icon {
+  width: 1.5rem;
+  height: 0.4rem;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content .info-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content .info-container .hours {
+  color: var(--text-1);
+  font-weight: 300;
+  font-size: 2rem;
+}
+body .time-tracking-section .main .time-tracking-container .card .card-content .info-container .last-time {
+  color: var(--text-2);
+}
+body .time-tracking-section .main .time-tracking-container .play::before {
+  background-color: var(--soft-blue);
+}
+body .time-tracking-section .main .time-tracking-container .study::before {
+  background-color: var(--light-red);
+}
+body .time-tracking-section .main .time-tracking-container .exercise::before {
+  background-color: var(--lime-green);
+}
+body .time-tracking-section .main .time-tracking-container .social::before {
+  background-color: var(--violet);
+}
+body .time-tracking-section .main .time-tracking-container .self-care::before {
+  background-color: var(--soft-orange);
+}
+
+@media screen and (min-width: 1000px) {
+  body .time-tracking-section {
+    height: 100vh;
+  }
+  body .time-tracking-section .main {
+    margin-top: 0;
+    width: 95%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "left right right right" "left right right right";
+  }
+  body .time-tracking-section .main .profile-time-container {
+    margin: 0;
+    margin-right: 1.5rem;
+    grid-area: left;
+  }
+  body .time-tracking-section .main .profile-time-container .profile-container {
+    align-items: start;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  body .time-tracking-section .main .profile-time-container .profile-container .pp-img {
+    margin-bottom: 3rem;
+  }
+  body .time-tracking-section .main .profile-time-container .profile-container .profile-info .name {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+  }
+  body .time-tracking-section .main .profile-time-container .time-container .times {
+    flex-direction: column;
+    height: 100%;
+  }
+  body .time-tracking-section .main .profile-time-container .time-container .times .time {
+    margin: 0.5rem 0;
+  }
+  body .time-tracking-section .main .time-tracking-container {
+    grid-area: right;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body .time-tracking-section .main .time-tracking-container .card .card-content {
+    padding: 2rem;
+  }
+  body .time-tracking-section .main .time-tracking-container .card .card-content .info-container {
+    flex-direction: column;
+    align-items: start;
+  }
+  body .time-tracking-section .main .time-tracking-container .card .card-content .info-container .hours {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  body .time-tracking-section .main {
+    width: 75%;
+  }
+}/*# sourceMappingURL=main.css.map */

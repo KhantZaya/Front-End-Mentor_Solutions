@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --drk-blue: hsl(228, 56%, 26%);
+  --very-drk-blue: hsl(229, 57%, 11%);
+  --gradient-1: hsl(6, 100%, 80%);
+  --gradient-2: hsl(335, 100%, 65%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-color: var(--very-drk-blue);
+  display: grid;
+  place-content: center;
+}
+body .mobile-bg {
+  display: none;
+}
+body .desktop-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+}
+body .component {
+  display: flex;
+  margin-top: 32%;
+  align-items: end;
+  justify-content: center;
+  height: 8.5rem;
+}
+body .component .first {
+  background-color: var(--drk-blue);
+  padding: 1.5rem 2rem;
+  margin: 0.5rem;
+  width: 17rem;
+  border-top-right-radius: 5rem;
+}
+body .component .first .logo {
+  width: 6rem;
+}
+body .component .first .info {
+  margin-top: 1.3rem;
+}
+body .component .first .info .icon {
+  background-color: var(--very-drk-blue);
+  width: 2.3rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  margin-right: 0.4rem;
+}
+body .component .first .info .icon:hover {
+  opacity: 0.6;
+}
+body .component .second {
+  background-color: var(--drk-blue);
+  width: 30rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  color: var(--pale-blue);
+  z-index: 0;
+}
+body .component .second .usage-text {
+  margin-bottom: 0.5rem;
+}
+body .component .second .usage-text span {
+  font-weight: bold;
+}
+body .component .second .slider-container {
+  position: relative;
+}
+body .component .second .slider-container .res {
+  position: absolute;
+  background-color: white;
+  color: var(--very-drk-blue);
+  width: 8rem;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  top: -3.5rem;
+  right: 2rem;
+  text-align: center;
+  font-weight: bolder;
+}
+body .component .second .slider-container .bar {
+  position: absolute;
+  background-color: var(--very-drk-blue);
+  height: 15px;
+  border-radius: 10px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+body .component .second .slider-container .bar .fill {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+  border-radius: 10px;
+}
+body .component .second .slider-container .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: transparent;
+  border-radius: 10px;
+}
+body .component .second .slider-container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+body .component .second .data-amout {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 810px) {
+  body {
+    padding: 1rem;
+  }
+  body .desktop-bg {
+    display: none;
+  }
+  body .mobile-bg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+  }
+  body .component {
+    flex-direction: column;
+    height: auto;
+  }
+  body .component .first {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 2.5rem 1.5rem;
+  }
+  body .component .second {
+    width: 100%;
+    margin: 0;
+    padding: 3rem 1.5rem;
+  }
+  body .component .second .slider-container .res {
+    width: 8rem;
+    height: 3.5rem;
+    top: auto;
+    bottom: -5rem;
+    right: auto;
+    left: 25%;
+  }
+}/*# sourceMappingURL=main.css.map */

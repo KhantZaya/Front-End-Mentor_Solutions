@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --drk-blue: hsl(217, 19%, 35%);
+  --xl-drk-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish: hsl(210, 46%, 95%);
+}
+
+body {
+  background-color: var(--light-grayish);
+  color: var(--white);
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+body .grid-section {
+  display: grid;
+}
+body .grid-section .card {
+  font-size: 13px;
+  padding: 1.5rem 1.9rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 400px;
+}
+body .grid-section .card .user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+body .grid-section .card .user .user-img {
+  border-radius: 50%;
+}
+body .grid-section .card .user .user-info {
+  margin-left: 1.5rem;
+  display: inline-block;
+  color: var(--white);
+}
+body .grid-section .card .user .user-info .verified {
+  color: var(--light-gray);
+}
+body .grid-section .card .artical {
+  letter-spacing: 0.03rem;
+}
+body .grid-section .card .artical .title {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+body .grid-section .card .artical .content {
+  opacity: 70%;
+  font-weight: 500;
+}
+body .grid-section .card-1 {
+  background-color: var(--violet);
+}
+body .grid-section .card-2 {
+  background-color: var(--drk-blue);
+}
+body .grid-section .card-3 {
+  background-color: var(--white);
+  color: var(--drk-blue);
+}
+body .grid-section .card-3 .user .name {
+  color: var(--drk-blue);
+}
+body .grid-section .card-4 {
+  background-color: var(--xl-drk-blue);
+  color: var(--light-gray);
+}
+body .grid-section .card-5 {
+  background-color: var(--white);
+  color: var(--drk-blue);
+}
+body .grid-section .card-5 .user .name {
+  color: var(--drk-blue);
+}
+
+@media screen and (min-width: 920px) {
+  body .grid-section {
+    margin-top: 1rem;
+    max-width: 1040px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0.5rem;
+    grid-template-areas: "wtfone wtfone softGray Wone" "Wtwo drkGray drkGray Wone";
+  }
+  body .grid-section .card {
+    margin: 0;
+    font-size: 13px;
+    max-width: none;
+  }
+  body .grid-section .card .user .user-img {
+    width: 2.3rem;
+  }
+  body .grid-section .card-1 {
+    grid-area: wtfone;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  body .grid-section .card-2 {
+    grid-area: softGray;
+  }
+  body .grid-section .card-3 {
+    grid-area: Wtwo;
+  }
+  body .grid-section .card-4 {
+    grid-area: drkGray;
+  }
+  body .grid-section .card-5 {
+    grid-area: Wone;
+  }
+}/*# sourceMappingURL=main.css.map */

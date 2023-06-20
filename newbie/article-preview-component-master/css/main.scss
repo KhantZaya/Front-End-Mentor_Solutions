@@ -1,0 +1,142 @@
+@import "base/base.scss";
+body {
+    background-color: var(--light-blue);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    .artical-card {
+        margin-top: 2rem;
+        background-color: white;
+        max-width: 375px;
+        border-radius: 1rem;
+        overflow: hidden;
+        .main-img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .content {
+        //padding: 1.5rem;
+        color: var(--drk-blue);
+        .artical {
+            padding: 1.5rem;
+            .title {
+                color: var(--xl-drk-blue);
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+        }
+        .feature {
+            position: relative;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            .pp-img {
+                width: 3rem;
+                border-radius: 100%;
+                margin: 1.5rem .5rem 2rem 1.5rem;
+            }
+            .info {
+                display: inline-block;
+                font-size: .8rem;
+                margin: 1rem;
+                //max-width: 8rem;
+                width: 40%;
+                .name {
+                    font-weight: 700;
+                    color: var(--xl-drk-blue);
+                }
+                .date {
+
+                }
+            }
+            .share {
+                padding: .7rem;
+                border-radius: 100%;
+                background-color: var(--light-blue);
+                color: var(--xl-drk-blue);
+                position: absolute;
+                z-index: 1;
+                right: 1.5rem;
+                top: 1.1rem;
+            }
+            .share-component {
+                background-color: var(--xl-drk-blue);
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                visibility: hidden;
+                width: 0;
+                transition: all 150ms ease-in-out;
+                overflow: hidden;
+                p {
+                    padding: .5rem;
+                    margin: 0 1rem;
+                    margin-right: 0;
+                    letter-spacing: .4rem;
+                    font-size: .8rem;
+                }
+                i {
+                    padding: .5rem;
+                    font-size: 1.4rem;
+                    color: var(--light-blue);
+                }
+            }
+        }
+        .active-share {
+            .share-component {
+                visibility: visible;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        .artical-card {
+            display: flex;
+            flex-direction: row;
+            max-width: 750px;
+            overflow:visible;
+            .img-container {
+                width: 45%;
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                overflow: hidden;
+                .main-img {
+                    width: 100%;
+                }
+            }
+            .content {
+                width: 55%;
+                .feature {
+                    //position: static;
+                    .share-component {
+                        //z-index: 10;
+                        position: absolute;
+                        border-radius: .5rem;
+                        width: 17rem;
+                        height: 3rem;   
+                        top: 0rem;
+                        left: 13.5rem;
+                        justify-content: space-around;
+                        transition: all 100ms ease-in-out;
+                        transform: scale(0);
+                    }
+                }
+                .active-share {
+                    .share-component {
+                        top: -3rem;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }    
+}

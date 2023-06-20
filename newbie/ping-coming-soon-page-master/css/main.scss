@@ -1,0 +1,163 @@
+@import "base/base.scss";
+
+body {
+    text-align: center;
+    .comming-soon {
+        padding: 1rem;
+        margin: 0 auto;
+        max-width: 25rem;
+        .logo {
+            margin: 2rem 0;
+            width: 4rem;
+        }
+        .title {
+            font-size: var(--title-fs);
+            color: var(--gray);
+            margin-bottom: 1rem;
+            span {
+                color: var(--drk-blue);
+                font-weight: 700;
+            }
+        }
+        .promo {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .form-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: space-between;
+            // height: 7rem;
+            .input-control {
+                max-width: 20rem;
+                width: 100%;
+                padding-bottom: 2.5rem;
+                .email-input {
+                    padding: 1rem;
+                    border: 1px solid var(--gray);
+                    max-width: 20rem;
+                    width: 88%;
+                    border-radius: 2rem;
+                    font-weight: inherit;
+                    //color: var(--pale-blue);
+                    margin-bottom: .3rem;
+                    &:focus {
+                        outline: none;
+                        border: 1px solid var(--blue);
+                    }
+                }
+                small {
+                    //margin-bottom: 2rem;
+                    color: var(--light-red);
+                    display: none;
+                }
+                
+            }
+            .active {
+                .email-input {
+                    border: 1px solid var(--light-red);
+                }
+                small {
+                    display: block;
+                }
+            }
+            .btn {
+                max-width: 20rem;
+                width: 100%;
+                background-color: var(--blue);
+                border-radius: 2rem;
+                border: none;
+                padding: 1rem;
+                color: white;
+                font-weight: 600;
+                box-shadow: 0rem .3rem .5rem var(--pale-blue);
+                margin-bottom: .3rem;
+
+            }
+        }
+        .hero-img {
+            margin: 4rem auto;
+            width: 95%;
+        }
+        .footer-container {
+            margin: 0 auto;
+            .fab {
+                color: var(--blue);
+                width: 1rem;
+                padding: 1rem;
+                border: 1px solid var(--pale-blue);
+                border-radius: 50%;
+                margin: 1rem;
+            }
+        }
+        .copy-right {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        .modal {
+            display: none;
+            padding: 1rem;
+            .bg-layer {
+                width: 100%;
+                height: 100%;
+                background-color: var(--pale-blue);
+                opacity: .5;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+            .card {
+                background-color: white;
+                border-radius: 1rem;
+                position: absolute;
+                z-index: 2;
+                padding: 1rem;
+                margin: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                max-width: 20rem;
+                height: 10rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        .comming-soon {
+            max-width: 1000px;
+            .logo {
+                width: 5rem;
+                margin: 1rem;
+            }
+            .title {
+                font-size: 2rem;
+            }
+            .form-control {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                .email-input {
+                    //width: 50rem;
+                    height: 100%;
+                }
+                .btn {
+                    width: 10rem;
+                    align-self: flex-start;
+                    margin-left: 1rem;
+                }
+            }
+            .hero-img {
+                width: 50%;
+                margin: 0;
+            }
+        }
+    }
+}

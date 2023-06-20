@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    --light-gray:  hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+body {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    //color: var(--light-gray);
+    .price-section {
+        margin: 1rem auto;
+        min-width: 15rem;
+        max-width: 22rem;
+        .pre-title, .title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }      
+        .join {
+            background-color: white;
+            padding: 2rem 1.5rem;    
+            .title {
+                color: var(--cyan);
+                margin-bottom: 1.5rem;
+                font-weight: 700;
+            }
+            .pre-title {
+                color: var(--bright-yellow);
+                margin-bottom: 1.5rem;
+            }
+            .content {
+                color: var(--grayish-blue);
+            }
+        }
+        .monthly {
+            background-color: var(--cyan);
+            padding:2rem 1.5rem;
+            color: white;
+            .title {
+                margin-bottom: 1rem;
+            }
+            .price {
+                margin-bottom: 1rem;
+                span {
+                    font-weight:lighter;
+                    font-size: 1rem;
+                    opacity: .6;
+                    margin-left: 1rem;
+                }
+            }
+            .content {
+                margin-bottom: 1.5rem;
+            }
+            .sign-up {
+                height: 2.3rem;
+                width: 100%;
+                border: none;
+                background-color: var(--bright-yellow);
+                color: white;
+                box-shadow: 0rem .2rem .9rem gray;
+                font-weight: bolder;
+            }
+        }
+        .why {
+            background-color: var(--cyan);
+            opacity: .8;
+            padding:2rem 1.5rem;
+            color: white;
+            .title {
+                margin-bottom: 1.5rem;
+            }
+            .content {
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 640px){
+    body {
+        .price-section {
+            max-width: 700px;
+            min-width: 620px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: .85fr 1fr;
+            grid-template-areas: "join join" "monthly why";
+            .join {
+                grid-area: join;
+            }
+            .monthly {
+                grid-area: monthly;
+                display: grid;
+                place-content: center;
+            }
+            .why {
+                grid-area: why;
+                display: grid;
+                place-content: center;
+            }
+        }
+    }
+}

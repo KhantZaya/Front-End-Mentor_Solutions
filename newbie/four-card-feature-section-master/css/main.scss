@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue:  hsl(212, 86%, 64%);
+
+    --vdk-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --vlh-gray:hsl(0, 0%, 98%);
+}
+html {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(-vlh-gray);
+    box-sizing: border-box;
+    // text-align: center;
+    color: var(--vdk-blue);
+
+    .header-content {
+        max-width: 50%;
+        // min-width: 90%;
+        min-width: 330px;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+        .header {
+            font-weight: bold;
+            span {
+                display: block;
+                font-weight: 200;
+            }
+        }
+        p {
+            color: var(--grayish-blue);
+        }
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1140px;
+        .box {
+            max-width: 300px;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: hidden;
+            margin: 10px;
+            ::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 5px;;
+                top: 0;
+                left: 0;
+                background-color: gray;
+            }
+            h3{
+                margin: 0;
+            }
+            p{
+                color: var(--grayish-blue);
+                font-weight: 400;
+            }
+            img {
+                width: 60px;
+                justify-self: flex-end;
+                display: block;
+                margin-left: auto;
+            }        
+        };
+        .first {
+          ::after {
+              background-color: var(--cyan);
+          }  
+        }
+        .second {
+          ::after {
+              background-color: var(--orange);
+          }  
+        }
+        .third {
+          ::after {
+              background-color: var(--blue);
+          }  
+        }
+        .fourth {
+          ::after {
+              background-color: var(--red);
+          }
+        }
+        .box-push {
+            transform: translateY(50%);
+        }
+    }
+}
+@media screen and (max-width: 720px){
+    body {
+        // padding: 10px;
+        .header {
+            font-size: 1.7em;
+            padding: 10px;
+        }
+        .container {
+            padding: 10px;
+            .box-push {
+                transform: translateY(0);
+            }
+        }
+    }
+}

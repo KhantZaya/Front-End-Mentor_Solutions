@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <img src="images/bg-desktop.png" alt="" class="desktop-bg">
+  <img src="images/bg-mobile.png" alt="" class="mobile-bg">
+  <main class="component">
+    <!-- first component -->
+    <div class="first">
+      <img src="images/logo.svg" alt="" class="logo">
+      <div class="info">
+        <img src="images/icon-document.svg" alt="" class="icon">
+        <img src="images/icon-folder.svg" alt="" class="icon">
+        <img src="images/icon-upload.svg" alt="" class="icon">
+      </div>
+    </div>
+    <!-- first component -->
+    <div class="second">
+      <p class="usage-text">
+        You’ve used <span>815 GB</span> of your storage 
+      </p>
+      <div class="slider-container">
+        <span class="res">50 GB LEFT</span>
+        <span class="bar"><span class="fill"></span></span>
+        <input class="slider" type="range" min="0" max="100" >
+      </div>
+      <div class="data-amout">
+        <span class="low">0 GB</span>
+        <span class="height">
+          <span>100 GB</span>
+        </span>
+      </div>
+    </div>
+  </main>
+
+  <!-- <script>
+    const slider = document.querySelector('.slider')
+    const fill = document.querySelector('.fill')
+    const res = document.querySelector('.res')
+
+let sliderValue = 0
+  
+let setinter = setInterval(() => {
+      sliderValue += 1
+      fill.style.width = sliderValue + "%"
+      res.style.left = sliderValue - 15 + "%"
+
+      let leftData = 100 -sliderValue
+      res.innerHTML = leftData +" "+ "GB LEFT"
+
+      slider.value = sliderValue
+    },1000)
+
+setinter()
+
+if (sliderValue = 3) {
+  clearInterval(setinter)
+}
+
+    function changeData () {
+      const sliderValue = slider.value
+      fill.style.width = sliderValue + "%"
+      res.style.left = sliderValue - 15 + "%"
+
+      let leftData = 100 -sliderValue
+      res.innerHTML = leftData +" "+ "GB LEFT"
+    }
+
+    slider.addEventListener('mousemove', changeData)
+    slider.addEventListener('change', changeData)
+ 
+
+  </script> -->
+  <!-- <script>
+    const slider = document.querySelector('.slider')
+    //const result = document.querySelector('.result')
+    const fill = document.querySelector('.fill')
+    const res = document.querySelector('.res')
+
+    slider.addEventListener('mousemove', () => {
+      const sliderValue = slider.value
+
+      fill.style.width = sliderValue + "%"
+      res.style.left = sliderValue + "%"
+      res.innerHTML = sliderValue  
+    })
+    slider.addEventListener('change', () => {
+      const sliderValue = slider.value
+
+      fill.style.width = sliderValue + "%"
+      res.style.left = sliderValue + "%"
+      res.innerHTML = sliderValue
+    })
+
+  </script> -->
+<!-- 
+  You’ve used 815 GB of your storage
+
+  185 GB Left
+  
+  0 GB
+  1000 GB-->
+</body>
+</html>

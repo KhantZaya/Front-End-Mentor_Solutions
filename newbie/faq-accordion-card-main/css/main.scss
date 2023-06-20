@@ -1,0 +1,168 @@
+@import "base/base.css";
+body {
+    display: grid;
+    place-content: center;
+    background-attachment:fixed;
+    height:100%;
+    padding: .5rem;
+    .card-container {
+        background-color: white;
+        max-width: 25rem;
+        //height: 35rem;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        margin-top: 8rem;
+        .pc-img-box {
+            display: none;
+        }
+        .img-container {
+            position: relative;
+            margin: 0 auto;
+            width: 80%;
+            height: auto;
+            padding-bottom: 6rem;
+            .pc-img {
+                display: none;
+            }
+            .mb-img {
+                width: 16rem;
+                position: absolute;
+                top: -8rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+            .mb-img-shadow {
+                position: absolute;
+                top: -.3rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+        .accordions-container {
+            margin: 0 auto;
+            max-width: 21rem;
+            margin-bottom: 1rem;
+            .title {
+                text-align: center;
+                color: var(--drk-blue-text);
+                font-weight: 700;
+                font-size: 2.5rem;
+                margin: 1rem;
+            }
+            .accordions {
+                //margin: 0 auto;
+                .accordion {
+                    list-style: none;
+                    border-bottom: 1px solid rgb(206, 206, 206);
+                    padding: 1rem 0;
+                    .question-container {
+                        .question {
+                            color: var(--drk-gray-text);
+                            display: inline;
+                            width: 80rem;
+                            font-size: .9rem;
+                        }
+                        img {
+                            width: .8rem;
+                            position: float;
+                            float: right;
+                            top: 0;
+                            padding: .5rem 0;
+                            transition: all 400ms ease-in-out;
+                        }
+                    }
+                    .answer {
+                        color: var(--soft-gray-text);
+                        max-width: 18rem;
+                        font-size:.9rem;
+                        height: 0;
+                        overflow: hidden;
+                        transition: all 400ms ease-in-out;  
+                    }
+                }
+                .active {
+                    .question {
+                        font-weight: bolder;
+                        color: var(--drk-blue-text);
+                    }
+                    img {
+                        transform: rotate(180deg);
+                    }
+                    .answer {
+                        margin-top: .7rem;
+                        height: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 710px) {
+    body {
+        .card-container {
+            flex-direction: row;
+            min-width: 720px;
+            margin:  10% auto;
+            padding-left: 0;
+            position: relative;
+            .img-container {
+                width: 45%;
+                overflow: hidden;
+                margin-left: 0;
+                .mb-img {
+                    display: none;
+                }
+                .pc-img {
+                    display: block;
+                    position: absolute;
+                }
+                .pc-illu {
+                    width: 22rem;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    left: -3.5rem;
+                }
+                .pc-img-shadow {
+                    width: 25rem;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    left: -5.5rem;    
+                }
+            }
+            .pc-img-box {
+                //z-index: 100;
+                display: block;
+                position: absolute;
+                width: 8rem;
+                top: 4rem;
+                bottom: 0;
+                left: -4rem;
+                margin: auto 0;
+            }
+            .accordions-container {
+                width: 60%;
+                .title {
+                    text-align: start;
+                }
+                .accordions{
+                    .accordion {
+                        .question-container {
+                            .question {
+                                font-size: 1rem;
+                            }
+                        }
+                        .answer {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

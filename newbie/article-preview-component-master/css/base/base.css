@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Kumbh+Sans:wght@400;700&family=Libre+Franklin:wght@300;600;700&family=Manrope:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --xl-drk-blue:hsl(217, 19%, 35%) ;
+  --drk-blue: hsl(214, 17%, 51%);
+  --medium-blue: hsl(212, 23%, 69%);
+  --light-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}/*# sourceMappingURL=base.css.map */

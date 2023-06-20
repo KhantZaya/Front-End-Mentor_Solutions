@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+:root {
+    --drk-blue: hsl(240, 38%, 20%);
+    --grayish-blue: hsl(240, 18%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    padding: 1rem;
+    height: 100vh;
+    overflow-x: hidden;
+    .testimonial-section {
+        margin: 2rem auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column-reverse;
+        .left-artical {
+            text-align: center;
+            position: relative;
+            color: var(--drk-blue);
+            .content {
+                margin-top: 4rem;
+                line-height: 1.7rem;
+                font-size: 1.2rem;
+                font-weight: 300;
+            }
+            .ppl-info {
+                margin-top: 1.5rem;
+                .name {
+                    font-weight: 700;
+                    color: var(--drk-blue);
+                    margin: .3rem;
+                }
+                .job {
+                    font-weight: 300;
+                    color: var(--grayish-blue);
+                    margin: .3rem;
+                }
+            }
+            .quote {
+                position: absolute;
+                top: 2rem;
+                width: 5rem;
+            }
+        }
+        .right-img {
+            position: relative;
+            display: grid;
+            place-items: center;
+            .ppl-img {
+                width: 90%;
+                box-shadow: 0 10px 10px var(--grayish-blue);
+            }
+            .p-bg {
+                position: absolute;
+                width: 120%;
+                top: -2rem;
+                left: -1.5rem;
+                z-index: -1;
+            }
+            .navigates {
+                transform: translateY(-1rem) scale(.7);
+                display: flex;
+                .prev-icon {
+                    background-color: white;
+                    padding: .7rem 1rem;
+                    border-top-left-radius: 2rem;
+                    border-bottom-left-radius: 2rem;
+                    &:hover {
+                        background-color: rgb(194, 194, 194);
+                    }
+                }
+                .next-icon {
+                    background-color: white;
+                    border-top-right-radius: 2rem;
+                    border-bottom-right-radius: 2rem;
+                    padding: .7rem 1rem;
+                    &:hover {
+                        background-color: rgb(194, 194, 194);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px) {
+    body {
+        display: grid;
+        place-items: center;
+        .testimonial-section {
+            margin: auto;
+            flex-direction: row;
+            width: 85%;
+            .left-artical {
+                width: 50%;
+                text-align: start;
+                z-index: 2;
+                transform: translateX(15%);
+                margin: auto;
+                .content {
+                    font-size: 150%;
+                }
+                .ppl-info {
+                    display: flex;
+                }
+                .quote {
+                    left: 5rem;
+                    top: 2rem;
+                }
+            }
+            .right-img {
+                width: 50%;
+                transform: translateX(-15%);
+                .ppl-img {
+                    width: 80%;
+                }
+                .p-bg {
+                    width: 105%;    
+                    top: -3rem;
+                }
+                .navigates {
+                    transform: scale(1);
+                    transform: translateY(-60%) translateX(-50%);
+                }
+            }
+        }
+    }
+}

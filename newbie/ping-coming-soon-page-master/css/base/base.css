@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Libre+Franklin:wght@300;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue:hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --drk-blue: hsl(209, 33%, 12%);
+  --title-fs: 1.5rem;
+  --title-fw: lighter;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Franklin", sans-serif;
+}/*# sourceMappingURL=base.css.map */

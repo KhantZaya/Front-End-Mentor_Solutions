@@ -1,0 +1,190 @@
+:root {
+  --body-bg-light: rgb(197, 197, 197);
+  --main-bg-light: white;
+  --main-1-light: rgb(55, 55, 255);
+  --main-2-light: rgb(51, 51, 228);
+  --text-1-light: rgb(255, 250, 250);
+  --text-2-light: rgb(80, 80, 80);
+  --text-3-light: rgb(197, 197, 197);
+  --body-bg-dark: #121212;
+  --main-bg-dark: #353535;
+  --main-1-dark: rgb(111, 111, 255);
+  --main-2-dark: rgb(106, 106, 197);
+  --text-1-dark: rgb(245, 245, 245);
+  --text-2-dark: rgb(131, 131, 131);
+  --text-3-dark: rgb(243, 243, 243);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: var(--body-bg-dark);
+    --main-bg: var(--main-bg-dark);
+    --main-1: var(--main-1-dark);
+    --main-2: var(--main-2-dark);
+    --text-1: var(--text-1-dark);
+    --text-2: var(--text-2-dark);
+    --text-3: var(--text-3-dark);
+  }
+}
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --body-bg: var(--body-bg-light);
+    --main-bg: var(--main-bg-light);
+    --main-1: var(--main-1-light);
+    --main-2: var(--main-2-light);
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+    --text-3: var(--text-3-dark);
+  }
+}
+[color-scheme=dark] {
+  --body-bg: var(--body-bg-dark);
+  --main-bg: var(--main-bg-dark);
+  --main-1: var(--main-1-dark);
+  --main-2: var(--main-2-dark);
+  --text-1: var(--text-1-dark);
+  --text-2: var(--text-2-dark);
+  --text-3: var(--text-3-dark);
+}
+
+[color-scheme=light] {
+  --body-bg: var(--body-bg-light);
+  --main-bg: var(--main-bg-light);
+  --main-1: var(--main-1-light);
+  --main-2: var(--main-2-light);
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --text-3: var(--text-3-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+}
+body .toggle-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+body .toggle-container .slider {
+  position: relative;
+  background-color: var(--main-bg);
+  height: 1.3rem;
+  width: 2.3rem;
+  border-radius: 1rem;
+}
+body .toggle-container .slider::before {
+  content: "";
+  margin: 1px;
+  position: absolute;
+  z-index: 2;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--body-bg);
+  transition: 0.3s;
+}
+body .toggle-container input {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+body .toggle-container input:checked + .slider::before {
+  transform: translateX(1rem);
+}
+body .main-card {
+  margin: auto;
+  margin-top: 3rem;
+  max-width: 400px;
+  border-radius: 3px;
+  background-color: var(--main-bg);
+  overflow: hidden;
+  text-align: center;
+}
+body .main-card .card-header {
+  background: url("../Assets/Pattern.png") var(--main-1);
+}
+body .main-card .card-header .header-title {
+  color: var(--text-1);
+  padding: 2.5rem 1.5rem;
+}
+body .main-card .card-body {
+  padding: 1rem;
+  font-size: 15px;
+}
+body .main-card .card-body .content {
+  color: var(--text-2);
+  margin-bottom: 1.5rem;
+}
+body .main-card .card-body .form {
+  width: 100%;
+  min-height: 3rem;
+  height: auto;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .main-card .card-body .form input {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--text-3);
+  width: 50%;
+  margin: 0.3rem;
+}
+body .main-card .card-body .form input:focus {
+  outline: none;
+}
+body .main-card .card-body .form .subscribe-btn {
+  font-weight: bold;
+  margin: 0.3rem;
+  border-radius: 3px;
+  color: var(--text-1);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: var(--main-2);
+}
+body .main-card .card-body .form .subscribe-btn:hover {
+  opacity: 0.9;
+}
+body .main-card .card-body .form .sub-info {
+  font-size: 13px;
+  margin-left: 0.7rem;
+  color: var(--text-2);
+  opacity: 0.7;
+}
+body .main-card .card-body .ppl-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+body .main-card .card-body .ppl-info .ppl-img {
+  margin-right: 1rem;
+}
+body .main-card .card-body .ppl-info .about-ppl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+}
+body .main-card .card-body .ppl-info .about-ppl .name {
+  font-weight: bolder;
+  color: var(--text-2);
+}
+body .main-card .card-body .ppl-info .about-ppl .job {
+  color: var(--text-2);
+}
+body .main-card .card-body .description {
+  color: var(--text-2);
+}/*# sourceMappingURL=main.css.map */

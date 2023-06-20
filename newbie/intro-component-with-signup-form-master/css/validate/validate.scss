@@ -1,0 +1,11 @@
+body {
+    .form-validation {
+        .form-container {
+            .success {
+                input {
+                    border-color:var(--green);
+                }
+            }
+        }
+    }
+}

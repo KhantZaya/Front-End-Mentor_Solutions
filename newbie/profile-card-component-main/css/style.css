@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+html {
+  background-color: var(--dark-cyan);
+  color: var(--very-dark-desaturated-blue);
+}
+
+body {
+  overflow: hidden;
+}
+body .bg {
+  position: fixed;
+  width: 750px;
+  z-index: -1;
+}
+body .bg-top {
+  top: -55%;
+  left: -15%;
+}
+body .bg-bottom {
+  bottom: -50%;
+  right: -15%;
+}
+body .card {
+  background-color: white;
+  margin: 5rem auto;
+  width: 20rem;
+  overflow: hidden;
+  border-radius: 0.8rem;
+}
+body .card .img {
+  width: 100%;
+}
+body .card .card-body {
+  text-align: center;
+  border-bottom: 1px solid #bbbbbb;
+}
+body .card .card-body .pp {
+  margin-top: -50px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+body .card .card-body .nameNage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -20px;
+}
+body .card .card-body .nameNage .name {
+  font-weight: 700;
+}
+body .card .card-body .nameNage .age {
+  opacity: 0.7;
+  margin-left: 7px;
+}
+body .card .card-body .city {
+  font-size: 14px;
+  opacity: 0.7;
+}
+body .card .footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  text-align: center;
+}
+body .card .footer .cat {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+body .card .footer .cat span {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 9px;
+  letter-spacing: 1px;
+}/*# sourceMappingURL=style.css.map */
